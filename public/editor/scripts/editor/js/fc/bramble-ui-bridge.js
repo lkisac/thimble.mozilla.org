@@ -108,7 +108,7 @@ define(function(require) {
     // *******EVENTS
     // User bar menu help
     $("#navbar-help").click(function() {
-      window.open("https://support.mozilla.org/" + locale + "/products/webmaker/thimble");
+      window.open("https://github.com/mozilla/thimble.mozilla.org/wiki/Using-Thimble-FAQ");
     });
 
     $("#new-project-link").click(function(e) {
@@ -365,13 +365,13 @@ define(function(require) {
       publishDialogUnderlay.remove();
       publishDialogUnderlay = null;
 
-      $("#publish-dialog").fadeOut();
+      $("#publish-dialog").hide();
       _escKeyHandler.stop();
       _escKeyHandler = null;
     }
     function showPublishDialog() {
       publishDialogUnderlay = new Underlay("#publish-dialog", hidePublishDialog);
-      $("#publish-dialog").fadeIn();
+      $("#publish-dialog").show();
 
       // Listen for ESC to close
       _escKeyHandler = new KeyHandler.ESC(hidePublishDialog);
